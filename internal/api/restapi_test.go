@@ -13,7 +13,7 @@ func TestApi_GetStuff(t *testing.T) {
 		serverCalled++
 		writer.WriteHeader(200)
 	}))
-	defer testServer.Clos()
+	defer testServer.Close() //close
 	apii := new(Api)
 	apii.Client = http.DefaultClient
 	assert.NotPanicsf(t, func() {
