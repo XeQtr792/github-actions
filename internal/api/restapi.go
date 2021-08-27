@@ -13,7 +13,7 @@ type Api struct {
 
 
 func (a *Api) GetStuff(uURL string) {
-	resp, err := a.Client.Get(uURL)
+	resp, err := a.Client.Ge(uURL)
 	if err != nil {
 		panic(err)
 	}
